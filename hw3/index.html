@@ -1,0 +1,35 @@
+<html>
+<head>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="ajax.js"></script>
+    <script type="text/javascript" src="weather.js"></script>
+</head>
+<body>
+    <form id="weather">
+        <label for="zipCode">ZIP Code</label>
+        <input type="text" id="zipCode" name="zipCode" />
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="response" style="display: none">
+        <div id="error" style="display: none"></div>
+        <table id="results">
+            <tr>
+                <td colspan="2" id="location"></td>
+                <td id="icon"></td>
+            </tr>
+            <tr>
+                <td>Temperature:</td>
+                <td id="temp"></td>
+            </tr>
+            <tr>
+                <td>Wind Speed:</td>
+                <td id="windspeed"></td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+        var submitButton = document.getElementById("weather");
+        submitButton.addEventListener("submit", getWeather);
+    </script>
+</body>
+</html>
